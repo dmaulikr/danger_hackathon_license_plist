@@ -1,0 +1,12 @@
+name: SDWebImage, nameSpecified: 
+body: Copyright (c) 2016 O…
+
+name: Timepiece, nameSpecified: 
+body: The MIT License (MIT…
+
+name: libwebp, nameSpecified: 
+body: Copyright (c) 2010, …
+
+add-version-numbers: true
+
+LicensePlist Version: 1.4.5

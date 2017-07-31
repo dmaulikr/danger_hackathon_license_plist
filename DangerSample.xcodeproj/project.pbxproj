@@ -14,6 +14,7 @@
 		73DF178A1F2F3FEE005DD344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73DF17891F2F3FEE005DD344 /* Assets.xcassets */; };
 		73DF178D1F2F3FEE005DD344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73DF178B1F2F3FEE005DD344 /* LaunchScreen.storyboard */; };
 		73DF17981F2F3FEE005DD344 /* DangerSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DF17971F2F3FEE005DD344 /* DangerSampleTests.swift */; };
+		73DF17AB1F2F4FAB005DD344 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73DF17AA1F2F4FAB005DD344 /* Settings.bundle */; };
 		B6DA9F5447505375F595D5CE /* Pods_DangerSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010860F4100FA9B106DF452 /* Pods_DangerSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		73DF17931F2F3FEE005DD344 /* DangerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DangerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DF17971F2F3FEE005DD344 /* DangerSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerSampleTests.swift; sourceTree = "<group>"; };
 		73DF17991F2F3FEE005DD344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73DF17AA1F2F4FAB005DD344 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		84989061EA850F776EE64F44 /* Pods-DangerSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DangerSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DangerSample/Pods-DangerSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				73DF17891F2F3FEE005DD344 /* Assets.xcassets */,
 				73DF178B1F2F3FEE005DD344 /* LaunchScreen.storyboard */,
 				73DF178E1F2F3FEE005DD344 /* Info.plist */,
+				73DF17AA1F2F4FAB005DD344 /* Settings.bundle */,
 			);
 			path = DangerSample;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				73DF177D1F2F3FEE005DD344 /* Resources */,
 				3E7F544DF252C99FE0A96EB7 /* [CP] Embed Pods Frameworks */,
 				CCDD520C9C97BA194B18854E /* [CP] Copy Pods Resources */,
+				73DF17A31F2F4C80005DD344 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,7 +189,7 @@
 					73DF177E1F2F3FEE005DD344 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 5GKRYZ5VBH;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					73DF17921F2F3FEE005DD344 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -219,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73DF17AB1F2F4FAB005DD344 /* Settings.bundle in Resources */,
 				73DF178D1F2F3FEE005DD344 /* LaunchScreen.storyboard in Resources */,
 				73DF178A1F2F3FEE005DD344 /* Assets.xcassets in Resources */,
 				73DF17881F2F3FEE005DD344 /* Main.storyboard in Resources */,
@@ -279,6 +284,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DangerSampleTests/Pods-DangerSampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		73DF17A31F2F4C80005DD344 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\ncd $SRCROOT\n/usr/local/bin/license-plist --output-path DangerSample/Settings.bundle --add-version-numbers\nfi";
 		};
 		7DD92BC86366DDC7AC60190C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -478,6 +496,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.DangerSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ca087db1-9615-43f7-9699-2110574229c7";
+				PROVISIONING_PROFILE_SPECIFIER = "WildCard Provisioning Profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -487,11 +507,12 @@
 			baseConfigurationReference = 31259B81304D7567A5F6BA83 /* Pods-DangerSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5GKRYZ5VBH;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DangerSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nerd0geek1.DangerSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -547,6 +568,7 @@
 				73DF179E1F2F3FEE005DD344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73DF179F1F2F3FEE005DD344 /* Build configuration list for PBXNativeTarget "DangerSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +577,7 @@
 				73DF17A11F2F3FEE005DD344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
