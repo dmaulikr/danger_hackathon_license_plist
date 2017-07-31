@@ -1,0 +1,11 @@
+machine:
+  xcode:
+    version: '8.3.3'
+dependencies:
+  override:
+    - bundle install --path=vendor/bundle
+  cache_directories:
+    - 'vendor/bundle'
+test:
+  override:
+    - bundle exec danger
