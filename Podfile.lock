@@ -23,21 +23,21 @@ PODS:
   - libwebp/utils (0.6.0):
     - libwebp/core
   - libwebp/webp (0.6.0)
-  - SDWebImage/Core (3.8.2)
-  - SDWebImage/WebP (3.8.2):
+  - SDWebImage/Core (4.0.0)
+  - SDWebImage/WebP (4.0.0):
     - libwebp
     - SDWebImage/Core
-  - Timepiece (1.1.0)
+  - Timepiece (1.2.0)
 
 DEPENDENCIES:
-  - SDWebImage/WebP (= 3.8.2)
-  - Timepiece (= 1.1.0)
+  - SDWebImage/WebP
+  - Timepiece
 
 SPEC CHECKSUMS:
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  Timepiece: 4190a7bc5ae1c05c87531fd75b14e17d2a017902
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  Timepiece: d07900e985af4911f09146f1175fdbec37944836
 
-PODFILE CHECKSUM: e7e805f958f6ed54696c4831f269085195a9fd64
+PODFILE CHECKSUM: 6b44b0fa9301a8a372884d0f4daa74460000e809
 
 COCOAPODS: 1.2.1
